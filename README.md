@@ -1,1 +1,1 @@
-# PokeKingApp Amir Sophie
+# PokeKingApp
