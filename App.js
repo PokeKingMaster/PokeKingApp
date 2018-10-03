@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
-import { AppRegistry,Text, View } from 'react-native';
+import { AppRegistry,Text, View, StyleSheet } from 'react-native';
 
-class Greeting extends Component {
+import { createStackNavigator} from 'react-navigation';
+
+import LoginScreen from './screens/LoginScreen';
+
+import HomeScreen from './screens/HomeScreen';
+
+
+export default class App extends React.Component { 
   render() {
-    return (
-      <Text>Hello {this.props.name}!</Text>
-    );
-  }
+	return (
+	<AppStackNavigator/>
+  );
+ }
 }
+	
+const AppStackNavigator = createStackNavigator({
+	Home: HomeScreen,
+	Login: LoginScreen
+})
+	  
 
-
-export default class JustifyContentBasics extends Component {
-  render() {
-    return (
-
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-      }}>
-        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-        <View style={{alignItems: 'center'}}>
-			<Greeting name='Rexxar' />
-			<Greeting name='Jaina' />
-			<Greeting name='Valeera' />
-		</View>
-		<View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
-      </View>
-    );
-  }
-};
+	   
